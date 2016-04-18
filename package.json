@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/RyanCopley/html-inline/issues"
   },
-  "homepage": "https://github.com/RyanCopley/html-inline#readme"
+  "homepage": "https://github.com/RyanCopley/html-inline#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "base64-stream": "^0.1.3",
+    "cheerio": "^0.20.0",
+    "lodash": "^4.11.1",
+    "request": "^2.72.0",
+    "utf8": "^2.1.1"
+  }
 }
