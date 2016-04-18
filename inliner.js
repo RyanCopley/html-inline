@@ -125,6 +125,7 @@ function inlineCssRefs(css, originatorUrl, done){
 	var matches = css.match(urlRegex);
 
 	async.each(matches, function (original, done){
+		//todo: make this better
 		var urlPath = original.replace("url", "").replace("(","").replace("'", "").replace("'", "").replace(")","");
 
 		var urlComponents = url.parse(originatorUrl);
