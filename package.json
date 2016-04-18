@@ -18,10 +18,10 @@
   "homepage": "https://github.com/RyanCopley/html-inline#readme",
   "dependencies": {
     "async": "^1.5.2",
-    "base64-stream": "^0.1.3",
     "cheerio": "^0.20.0",
+    "html-minifier": "^1.5.0",
     "lodash": "^4.11.1",
-    "request": "^2.72.0",
-    "utf8": "^2.1.1"
+    "mime-types": "^2.1.10",
+    "request": "^2.72.0"
   }
 }
