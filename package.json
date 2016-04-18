@@ -1,0 +1,19 @@
+{
+  "name": "html-inline",
+  "version": "0.0.1",
+  "description": "Inline html files for portable documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanCopley/html-inline.git"
+  },
+  "author": "Ryan Copley (html-inline@ryancopley.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RyanCopley/html-inline/issues"
+  },
+  "homepage": "https://github.com/RyanCopley/html-inline#readme"
+}
