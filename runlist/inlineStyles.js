@@ -25,28 +25,32 @@ function run($, context, cb){
 
 function inlineCssRefs(css, originatorUrl, done){
 	css = css.toString();
-	var urlRegex = /url\s?\([\S^\)]+\)/g
-	var matches = css.match(urlRegex);
+	var urlRegex = /url\s?\((?!\'data)(?:\'|\"|\s)?([^\)]+)(?:\'|\"|\s)?\)/
+	var match;
 
-	async.each(matches, function (original, done){
-		//todo: make this better
-		var urlPath = original.replace("url", "").replace("(","").replace("'", "").replace("'", "").replace(")","");
+	var ctx = {};
+	ctx.url = url.parse(originatorUrl);
 
-		var urlComponents = url.parse(originatorUrl);
-		var context = {};
-		context.url = urlComponents;
-		var resourceString = utils.fullyQualifyUrl(urlPath, context);
+	async.whilst(function(){
+		match = css.match(urlRegex);
+		return !!match;
+	}, function (cb){
+		var urlPath = match[1];
+		if (["'", '"'].indexOf(urlPath.substr(-1, 1)) != -1){ // The regex above isn't exceptionally intelligent...
+			urlPath = urlPath.substr(0, urlPath.length-1).trim();
+		} 
 
+		var resourceString = utils.fullyQualifyUrl(urlPath, ctx);
 		utils.download(resourceString, function (err, body){
 			var imageData = new Buffer(body, "binary");
 			var base64 = imageData.toString("base64");
 			var inlined = "url('data:" + mime.lookup(urlPath) + ";charset=utf-8;base64,"+base64+"')";
-			css = css.replace(original, inlined);
-			done();
+			css = css.replace(match[0], inlined);
+			return cb();
 		});
-	}, function (err){
-		done(null, css);
 
+	}, function (err){
+		done(err, css);
 	});
 }
 

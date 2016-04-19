@@ -26,7 +26,7 @@ function inlineByUrl(startAddress, cb) {
 			require("./runlist/stripLinks.js"),
 			require("./runlist/inlineScripts.js"),
 			require("./runlist/inlineStyles.js"),
-			require("./runlist/inlineImages.js"),
+			require("./runlist/inlineImages.js")
 		];
 
 		async.each(runlist, function (runner, done){

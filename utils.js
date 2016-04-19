@@ -19,10 +19,16 @@ function fullyQualifyUrl(urlString, context){
 	}
 
 	var scriptSourceUrl = url.parse(urlString);
-	
 	// Fully qualified URLs
 	if (!scriptSourceUrl.host){
-		urlString = context.url.resolve(urlString);
+		console.log(scriptSourceUrl.path);
+		if (scriptSourceUrl.path.substring(0,1) === "/"){
+			urlString = context.url.protocol + "//" + context.url.host + scriptSourceUrl.href;
+		}else if (scriptSourceUrl.path.substring(0,1) === "."){
+			urlString = url.resolve(context.url.href, urlString);
+		}else{
+			urlString = context.url.protocol + "//" + context.url.host + "/" + scriptSourceUrl.href;
+		}
 	}
 	return urlString;
 }
