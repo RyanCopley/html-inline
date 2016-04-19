@@ -25,7 +25,7 @@ function run($, context, cb){
 
 function inlineCssRefs(css, originatorUrl, done){
 	css = css.toString();
-	var urlRegex = /url\s?\((?!\'data)(?:\'|\"|\s)?([^\)]+)(?:\'|\"|\s)?\)/
+	var urlRegex = /(url\((?!["'\s]?data)\s?(["']?)\s?([^)'"\s]*)\s?\2\s?\))/
 	var match;
 
 	var ctx = {};
@@ -35,17 +35,14 @@ function inlineCssRefs(css, originatorUrl, done){
 		match = css.match(urlRegex);
 		return !!match;
 	}, function (cb){
-		var urlPath = match[1];
-		if (["'", '"'].indexOf(urlPath.substr(-1, 1)) != -1){ // The regex above isn't exceptionally intelligent...
-			urlPath = urlPath.substr(0, urlPath.length-1).trim();
-		} 
+		var urlPath = match[3];
 
 		var resourceString = utils.fullyQualifyUrl(urlPath, ctx);
 		utils.download(resourceString, function (err, body){
 			var imageData = new Buffer(body, "binary");
 			var base64 = imageData.toString("base64");
 			var inlined = "url('data:" + mime.lookup(urlPath) + ";charset=utf-8;base64,"+base64+"')";
-			css = css.replace(match[0], inlined);
+			css = css.replace(match[1], inlined);
 			return cb();
 		});
 

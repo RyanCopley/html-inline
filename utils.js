@@ -21,7 +21,6 @@ function fullyQualifyUrl(urlString, context){
 	var scriptSourceUrl = url.parse(urlString);
 	// Fully qualified URLs
 	if (!scriptSourceUrl.host){
-		console.log(scriptSourceUrl.path);
 		if (scriptSourceUrl.path.substring(0,1) === "/"){
 			urlString = context.url.protocol + "//" + context.url.host + scriptSourceUrl.href;
 		}else if (scriptSourceUrl.path.substring(0,1) === "."){
