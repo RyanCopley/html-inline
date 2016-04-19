@@ -1,5 +1,5 @@
 {
-  "name": "html-inline",
+  "name": "web-html-inline",
   "version": "0.0.1",
   "description": "Inline html files for portable documents",
   "main": "inliner.js",
