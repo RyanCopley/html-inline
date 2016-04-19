@@ -15,7 +15,7 @@ var minifyOpts = {
 	removeOptionalTags : true
 };
 
-function inline(startAddress, cb) {
+function inlineByUrl(startAddress, cb) {
 	var context = {};
 	context.url = url.parse(startAddress);
 
@@ -38,5 +38,5 @@ function inline(startAddress, cb) {
 }
 
 module.exports = {
-	inline : inline
+	inlineByUrl : inlineByUrl
 };
