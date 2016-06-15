@@ -1,6 +1,6 @@
 {
   "name": "web-html-inline",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Inline html files for portable documents",
   "main": "inliner.js",
   "scripts": {
