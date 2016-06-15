@@ -1,0 +1,106 @@
+{
+  "_args": [
+    [
+      "web-html-inline@0.0.1",
+      "C:\\Users\\ahorn\\Desktop\\Gannett\\wlna-webservice"
+    ]
+  ],
+  "_from": "web-html-inline@0.0.1",
+  "_id": "web-html-inline@0.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/web-html-inline",
+  "_nodeVersion": "4.1.2",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/web-html-inline-0.0.1.tgz_1461090797063_0.8722888154443353"
+  },
+  "_npmUser": {
+    "email": "npm@ryancopley.com",
+    "name": "objectivecopley"
+  },
+  "_npmVersion": "2.14.4",
+  "_phantomChildren": {
+    "aws-sign2": "0.6.0",
+    "aws4": "1.3.2",
+    "bl": "1.1.2",
+    "caseless": "0.11.0",
+    "combined-stream": "1.0.5",
+    "extend": "3.0.0",
+    "forever-agent": "0.6.1",
+    "form-data": "1.0.0-rc4",
+    "har-validator": "2.0.6",
+    "hawk": "3.1.3",
+    "http-signature": "1.1.1",
+    "is-typedarray": "1.0.0",
+    "isstream": "0.1.2",
+    "json-stringify-safe": "5.0.1",
+    "mime-types": "2.1.11",
+    "node-uuid": "1.4.7",
+    "oauth-sign": "0.8.2",
+    "qs": "6.1.0",
+    "stringstream": "0.0.5",
+    "tough-cookie": "2.2.2",
+    "tunnel-agent": "0.4.3"
+  },
+  "_requested": {
+    "name": "web-html-inline",
+    "raw": "web-html-inline@0.0.1",
+    "rawSpec": "0.0.1",
+    "scope": null,
+    "spec": "0.0.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/web-html-inline/-/web-html-inline-0.0.1.tgz",
+  "_shasum": "f88e4841063451b2bbc7369d5f99dfe7bb432c39",
+  "_shrinkwrap": null,
+  "_spec": "web-html-inline@0.0.1",
+  "_where": "C:\\Users\\ahorn\\Desktop\\Gannett\\wlna-webservice",
+  "author": {
+    "name": "Ryan Copley",
+    "url": "html-inline@ryancopley.com"
+  },
+  "bugs": {
+    "url": "https://github.com/RyanCopley/html-inline/issues"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "cheerio": "^0.20.0",
+    "html-minifier": "^1.5.0",
+    "lodash": "^4.11.1",
+    "mime-types": "^2.1.10",
+    "open": "0.0.5",
+    "request": "^2.72.0"
+  },
+  "description": "Inline html files for portable documents",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "f88e4841063451b2bbc7369d5f99dfe7bb432c39",
+    "tarball": "https://registry.npmjs.org/web-html-inline/-/web-html-inline-0.0.1.tgz"
+  },
+  "gitHead": "c6603bda3d64e187ae481e41d4dbb2a5ee833679",
+  "homepage": "https://github.com/RyanCopley/html-inline#readme",
+  "license": "MIT",
+  "main": "inliner.js",
+  "maintainers": [
+    {
+      "name": "objectivecopley",
+      "email": "npm@ryancopley.com"
+    }
+  ],
+  "name": "web-html-inline",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanCopley/html-inline.git"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "version": "0.0.1"
+}
