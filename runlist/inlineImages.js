@@ -13,6 +13,11 @@ function run($, context, cb){
 		}
 
 		utils.download(sourceString, function (err, body){
+			if (err || !body) {
+				//Might be worth retrying or something here
+				console.error(err);
+				return done();
+			}
 			var imageData = new Buffer(body, "binary");
 			var base64 = imageData.toString("base64");
 			obj.attr("src", "data:" + mime.lookup(sourceString) + ";charset=utf-8;base64," + base64);

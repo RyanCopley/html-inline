@@ -15,11 +15,14 @@ var minifyOpts = {
 	removeOptionalTags : true
 };
 
-function inlineByUrl(startAddress, cb) {
+function inlineByUrl(startAddress, headers, cb) {
 	var context = {};
 	context.url = url.parse(startAddress);
 
-	utils.download(startAddress, function (err, body){
+	utils.downloadWithHeaders(startAddress, headers, function (err, body){
+		if (err || !body) {
+			return cb(err);
+		}
 		var $ = cheerio.load(body);
 		var runlist = [
 			require("./runlist/removeIncompatibles.js"),
