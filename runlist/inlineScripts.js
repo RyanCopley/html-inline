@@ -13,7 +13,7 @@ function run($, context, cb){
 		}
 		
 		utils.download(sourceString, function (err, body){
-			obj.replaceWith($("<script>").html(body));
+			obj.replaceWith($("<script>").text(body));
 			return done();
 		});
 	}, cb);
